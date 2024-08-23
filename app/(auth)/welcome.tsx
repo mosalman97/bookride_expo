@@ -4,7 +4,7 @@ import Swiper from "react-native-swiper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 
-import { onboarding } from "@/constants";
+import { onboarding, FontWeight } from "@/constants";
 import CustomButton from "@/components/CustomButton";
 
 const OnBoarding = () => {
@@ -65,7 +65,7 @@ const OnBoarding = () => {
             ? router.replace("/(auth)/sign-up")
             : swipeRef?.current?.scrollBy(1)
         }
-        fontFamily={"JakartaBold"}
+        fontFamily={"JakartaSemiBold"}
       />
     </SafeAreaView>
   );

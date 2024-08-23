@@ -38,6 +38,7 @@ const InputField = ({
               <Image source={icon} className={`w-6 h-6 ml-4 ${iconStyle}`} />
             )}
             <TextInput
+              autoCapitalize="none"
               className={`rounded-full p-4 font-jakartaSemiBold text-[15px] ${inputStyle} text-left`}
               secureTextEntry={secureTextEntry}
               placeholder={placeholder}

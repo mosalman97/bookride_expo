@@ -98,3 +98,13 @@ export const onboarding = [
 export const data = {
   onboarding,
 };
+
+export const FontWeight = {
+  Jakarta: "Jakarta",
+  JakartaBold: "JakartaBold",
+  JakartaExtraBold: "JakartaExtraBold",
+  JakartaExtraLight: "JakartaExtraLight",
+  JakartaLight: "JakartaLight",
+  JakartaMedium: "JakartaMedium",
+  JakartaSemiBold: "JakartaSemiBold",
+};

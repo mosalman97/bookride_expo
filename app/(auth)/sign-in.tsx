@@ -6,8 +6,12 @@ import InputField from "@/components/InputField";
 import CustomButton from "@/components/CustomButton";
 import { Link } from "expo-router";
 import OAuth from "@/components/OAuth";
+import { useSignIn } from "@clerk/clerk-expo";
+import { useRouter } from "expo-router";
 
 const SignIn = () => {
+  const router = useRouter();
+  const { isLoaded, signIn, setActive } = useSignIn();
   // local state
   const [form, setForm] = useState({
     email: "",
@@ -15,7 +19,29 @@ const SignIn = () => {
   });
 
   // function onpress signup
-  const onSignInPress = async () => {};
+  const onSignInPress = async () => {
+    if (!isLoaded) {
+      return;
+    }
+
+    try {
+      const signInAttempt = await signIn.create({
+        identifier: form.email,
+        password: form.password,
+      });
+
+      if (signInAttempt.status === "complete") {
+        await setActive({ session: signInAttempt.createdSessionId });
+        router.replace("/");
+      } else {
+        // See https://clerk.com/docs/custom-flows/error-handling
+        // for more info on error handling
+        console.error(JSON.stringify(signInAttempt, null, 2));
+      }
+    } catch (err: any) {
+      console.error(JSON.stringify(err, null, 2));
+    }
+  };
 
   return (
     <ScrollView className="flex-1 bg-white">

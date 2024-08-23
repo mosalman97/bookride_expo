@@ -34,7 +34,7 @@ const getTextVariantStyle = (variant: ButtonProps["textVariant"]) => {
 };
 
 const CustomButton = ({
-  fontFamily = "JakartaRegular",
+  fontFamily,
   onPress,
   title,
   bgVariant = "primary",
@@ -52,7 +52,8 @@ const CustomButton = ({
     >
       {IconLeft && <IconLeft />}
       <Text
-        className={`text-lg  font-${fontFamily} ${getTextVariantStyle(textVariant)}`}
+        style={[{ fontFamily: fontFamily }]}
+        className={`text-lg font-JakartaBold ${getTextVariantStyle(textVariant)}`}
       >
         {title}
       </Text>
