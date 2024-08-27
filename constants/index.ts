@@ -32,17 +32,7 @@ import onboarding2 from "@/assets/images/onboarding2.png";
 import onboarding3 from "@/assets/images/onboarding3.png";
 import signUpCar from "@/assets/images/signup-car.png";
 
-export const images = {
-  onboarding1,
-  onboarding2,
-  onboarding3,
-  getStarted,
-  signUpCar,
-  check,
-  noResult,
-  message,
-};
-
+// icons
 export const icons = {
   arrowDown,
   arrowUp,
@@ -71,6 +61,18 @@ export const icons = {
   to,
 };
 
+// images
+export const images = {
+  onboarding1,
+  onboarding2,
+  onboarding3,
+  getStarted,
+  signUpCar,
+  check,
+  noResult,
+  message,
+};
+
 export const onboarding = [
   {
     id: 1,
@@ -95,6 +97,7 @@ export const onboarding = [
   },
 ];
 
+// onboarding data
 export const data = {
   onboarding,
 };
