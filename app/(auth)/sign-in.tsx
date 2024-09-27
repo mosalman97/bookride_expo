@@ -1,5 +1,5 @@
 import { View, ScrollView, Image, Text } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { images, icons } from "@/constants";
 import InputField from "@/components/InputField";
