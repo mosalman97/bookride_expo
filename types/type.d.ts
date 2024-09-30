@@ -128,7 +128,7 @@ declare interface LocationStore {
 declare interface DriverStore {
   drivers: MarkerData[];
   selectedDriver: number | null;
-  setSelectedDriver: (driverId: number) => void;
+  setSelectedDriver: (item: any) => void;
   setDrivers: (drivers: MarkerData[]) => void;
   clearSelectedDriver: () => void;
 }

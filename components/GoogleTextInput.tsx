@@ -1,10 +1,23 @@
 import { View, Image, Text } from "react-native";
-// import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 import { icons } from "@/constants";
 import { GoogleInputProps } from "@/types/type";
 
-const googlePlacesApiKey = process.env.EXPO_PUBLIC_PLACES_API_KEY;
+const googlePlacesApiKey = process.env.EXPO_PUBLIC_GOOGLE_API_KEY;
+
+const placesData = [
+  {
+    id: "1",
+    description: "Central Park, New York, NY",
+    geometry: {
+      location: {
+        lat: 40.785091,
+        lng: -73.968285,
+      },
+    },
+  },
+];
 
 const GoogleTextInput = ({
   icon,
@@ -17,7 +30,7 @@ const GoogleTextInput = ({
     <View
       className={`flex flex-row items-center justify-center relative z-50 rounded-xl ${containerStyle}`}
     >
-      {/* <GooglePlacesAutocomplete
+      <GooglePlacesAutocomplete
         fetchDetails={true}
         placeholder="Search"
         debounce={200}
@@ -72,11 +85,12 @@ const GoogleTextInput = ({
             />
           </View>
         )}
+        predefinedPlaces={placesData}
         textInputProps={{
           placeholderTextColor: "gray",
           placeholder: initialLocation ?? "Where do you want to go?",
         }}
-      /> */}
+      />
     </View>
   );
 };
